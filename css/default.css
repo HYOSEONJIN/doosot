@@ -190,13 +190,15 @@ body {
 
 
 .footer {
+    clear: both;
     margin-bottom: 0px;
     width: 100vw;
-    height: 5vw;
+    height: 84px;
     background: #f2c000;
     position: relative;
     bottom: 0;
     text-align: center;
+    padding-top: 20px;
 }
 
 .menu {
@@ -445,7 +447,18 @@ body {
     margin: 30px 103px;
 }
 
+.footer p{
+    font-weight: bold;
+    margin : 0px;
+    
+}
 
+.footer img{
+    position: absolute;
+    float : right;
+    bottom : 10px;
+    right : 20%;
+}
 
 
 button {
@@ -489,4 +502,14 @@ button:hover:before,
 button:hover:after {
     width: 100%;
     transition: 800ms ease all;
+}
+
+.block_click{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 1920px;
+    height: 2000px;
+    background-color: aquamarine;
+    z-index : 1;
 }

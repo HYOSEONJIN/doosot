@@ -28,21 +28,23 @@
 
 
     <script>
+
+        
         $(document).ready(function() {
 
-            var addcnt1 = 1;
-            var addcnt2 = 1;
-            var addcnt3 = 1;
-            var addcnt4 = 1;
-            var addcnt5 = 1;
-            var addcnt6 = 1;
-
+        var addcnt1 = 1;
+        var addcnt2 = 1;
+        var addcnt3 = 1;
+        var addcnt4 = 1;
+        var addcnt5 = 1;
+        var addcnt6 = 1;
             /*            
             for (var i = 1; i < 7; i++) {
                 $('#addmenu' + i).click(function() {
                     alert('추가되었음');
                 });
                 }*/
+
 
 
             $('#addmenu1').click(function() {
@@ -98,6 +100,28 @@
                 }
                 addcnt6++;
             });
+            
+            
+            // 추가메뉴창 닫기
+            $('#addmenuClose').click(function(){
+                $('#menuinfo').css('display','none');
+                
+                $('#addmenu1').css('border', '0px solid red');
+                $('#addmenu2').css('border', '0px solid red');
+                $('#addmenu3').css('border', '0px solid red');
+                $('#addmenu4').css('border', '0px solid red');
+                $('#addmenu5').css('border', '0px solid red');
+                $('#addmenu6').css('border', '0px solid red');
+                
+                addcnt1 = 1;
+                addcnt2 = 1;
+                addcnt3 = 1;
+                addcnt4 = 1;
+                addcnt5 = 1;
+                addcnt6 = 1;
+            });
+
+             $('#addmenuClose').click(function(){
 
 
         });
@@ -145,7 +169,7 @@
 
                         <table class="tg">
                             <form class="">
-                                <tbody>
+                                <tbody id="addmenu_tbody">
                                     <tr>
                                         <td rowspan="2"><img src="image/menu/square/1.jpg"></td>
                                         <td colspan="3">
@@ -191,7 +215,7 @@
 
                     <div class="paybutton">
                         <input type="submit" class="btn btn-warning" value="결제">
-                        <input type="button" class="btn btn-warning" value="취소">
+                        <input type="button" class="btn btn-warning" value="취소" onclick="removeCart()">
                     </div>
 
                 </div>
@@ -262,7 +286,8 @@
             </div>
             <div class="addmenubutton">
                 <input type="submit" value="선택완료">
-                <input type="button" value="닫기" onclick="javascript:addmenuClose()">
+                <input type="button" value="닫기" id="addmenuClose"> 
+
             </div>
 
         </div>
@@ -283,8 +308,15 @@
     </div>
     -->
     <footer class="footer">
-        dddddddddddddddd
+        <p>
+            <font color=#cf1126>❤</font> 남서아 | 서지민 | 양선경 | 이수진 | 진효선 | 최혜인 <font color=#cf1126>❤</font>
+        </p>
+        <p>@TEAM DOOSOT DOSIRAK
+        <p>
+
     </footer>
+    
+    
 
 
 
