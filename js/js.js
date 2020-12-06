@@ -159,6 +159,7 @@ function takeout(takeout) {
     document.querySelector('#takeout').style.display = 'none';
 }
 
+/*고른 음식 수량 선택*/
 function fnCalCount(type, ths){
     var $input = $(ths).parents("td").find("input[name='pop_out']");
     var tCount = Number($input.val());
