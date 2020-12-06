@@ -159,18 +159,10 @@ body {
     height: 100px;
     float: left;
     background-color: #FFFFFF;
-
     padding: 30px;
+    font-size: 20px;
 }
 
-.cart {
-    border-radius: 20px;
-    width: 250px;
-    height: 750px;
-    float: right;
-
-    background-color: #FFFFFF;
-}
 
 .menulist {
     margin-top: 100px;
@@ -202,66 +194,185 @@ body {
     width: 100vw;
     height: 5vw;
     background: #f2c000;
-    position:relative;
-    bottom:0;
-    text-align: center;    
+    position: relative;
+    bottom: 0;
+    text-align: center;
 }
 
-.menu{
+.menu {
     width: 200px;
     margin-right: 15px;
-    float : left;
+    float: left;
     margin-bottom: 20px;
 }
 
-.menu img{    
+.menu img {
     margin-bottom: 10px;
     border-radius: 5px;
 }
 
-.menu a1{
+.menu a1 {
     padding-left: 10px;
-    color : #cf1126;
+    color: #cf1126;
     font-weight: bold;
-    margin-top : 10px;
+    margin-top: 10px;
 
 }
 
-.menu a2{
+.menu a2 {
     padding-left: 10px;
 }
 
 
 
 
-#bowl{
+#bowl {
     display: none;
 }
 
-#side{
+#side {
     display: none;
 }
 
-#beverage{
+#beverage {
     display: none;
 }
 
-.menuinfo{
+#menuinfo {
     position: absolute;
-    top : 120px;
-    left : 35%;
+    top: 120px;
+    left: 35%;
     width: 400px;
-    height: 700px;
+    height: 530px;
     background-color: #fffcf8;
     border-radius: 5px;
     box-shadow: 1px 1px 3px;
-    
+    padding: 30px;
+    display: none;
+
+}
+
+.menuinfo h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: dimgrey;
+    margin-left: 10px;
+}
+
+.menuinfo h2 {
+    font-size: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.addmenu {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    vertical-align: middle;
+    /*border : 1px solid black;*/
+    margin-left: 10px;
+    padding-top: 25px;
+    margin-bottom: 20px;
+
+}
+
+.addmenu a1 {
+    font-weight: bold;
+}
+
+.addmenu a2 {
+    font-size: 0.8em;
+    color: #cf1126;
+}
+
+.addmenubutton {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.addmenubutton input {
+    width: 100px;
+    height: 50px;
+    margin: 10px;
 }
 
 
 
+.cart {
+    border-radius: 20px;
+    width: 250px;
+    height: 750px;
+    float: right;
+    padding: 20px;
+
+    background-color: #FFFFFF;
+
+}
+
+.cartlist{
+    width: 100%;
+    height: 550px;
+    overflow: scroll;
+}
+
+.cart h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'TmoneyRoundWindExtraBold';
+    margin-top: 20px;
+}
+
+.cart_line_deco {
+    border: 4px solid #f2c000;
+    border-radius: 100px;
+}
+
+.cart img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.cart a{
+    font-size : 16px;
+}
+
+.cancel{
+    margin-left: 20px;
+    
+}
+.cart table{
+    margin-bottom: 20px;
+}
 
 
+.cart input[type=submit]{
+    float: left;
+    background-color: #f2c000;
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-size : 30px;
+    width: 100px;
+    border: 0px;
+    padding: 10px;
+    color:white;
+    border-radius: 5px;
+    
+    margin-right: 10px;
+}
+.paybutton input[type=button]{
+    background-color: #f2c000;
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-size : 30px;
+    width: 100px;
+    border: 0px;
+    padding: 10px;
+    color:white;
+    border-radius: 5px;
+}
 
 
 
@@ -273,7 +384,6 @@ body {
 
 
 button {
-    
     background-color: transparent;
     color: #fff;
     border: none;
@@ -315,3 +425,5 @@ button:hover:after {
     width: 100%;
     transition: 800ms ease all;
 }
+
+

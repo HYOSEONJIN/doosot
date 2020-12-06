@@ -15,7 +15,7 @@ function getSquareItem() {
     var menuHtml = "";
 
     for (var i = 0; i < menudata.length; i++) {
-        menuHtml += '<div class="menu">';
+        menuHtml += '<div class="menu" onclick = "javascript:addmenuOpen();">';
         menuHtml += '<table>';
         menuHtml += '<tr>';
         menuHtml += '<td><img src="'
@@ -116,12 +116,10 @@ function getBeverageItem() {
 
 
 function callbowllist() {
-
     document.querySelector('#square').style.display = 'none';
     document.querySelector('#bowl').style.display = 'block';
     document.querySelector('#side').style.display = 'none';
     document.querySelector('#beverage').style.display = 'none';
-    
 
 };
 
@@ -137,13 +135,26 @@ function callsidelist() {
     document.querySelector('#bowl').style.display = 'none';
     document.querySelector('#side').style.display = 'block';
     document.querySelector('#beverage').style.display = 'none';
-}
+};
 
 function callbvlist() {
     document.querySelector('#square').style.display = 'none';
     document.querySelector('#bowl').style.display = 'none';
     document.querySelector('#side').style.display = 'none';
     document.querySelector('#beverage').style.display = 'block';
+};
+
+
+// 추가메뉴창 닫기
+function addmenuClose(){
+    document.querySelector('#menuinfo').style.display = 'none';
+};
+
+// 추가메뉴창 열기
+function addmenuOpen(){
+    document.querySelector('#menuinfo').style.display = 'block';
 }
 
 
+/*
+*/
