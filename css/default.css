@@ -17,6 +17,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Jal_Onuel';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff') format('woff');
@@ -28,7 +29,7 @@
 
 * {
     margin: 0px;
-    padding: 0px;    
+    padding: 0px;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -113,7 +114,7 @@ body {
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 1px 1px 1px dimgrey;
-    
+
 }
 
 .bc:nth-child(1) {
@@ -124,7 +125,7 @@ body {
 
 .bc img {
     margin-bottom: 20px;
-    border-radius: 10px 10px 0px 0px ;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .bc h2 {
@@ -134,52 +135,183 @@ body {
 }
 
 
-.orderbackground{
+.orderbackground {
     background-color: antiquewhite;
     width: 100%;
     height: 100%;
 }
 
 
-.orderbody{
-    background-color: #FFFFFF;
+.orderbody {
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
     width: 1200px;
     height: 100%;
     border-radius: 20px;
     overflow: hidden;
 }
 
-.menuselect{
-    border-radius: 20px 0 0 0;
-    background-color: skyblue;
-    width: 950px;
-    height: 120px;
+.menuselect {
+    border-radius: 20px 20px 0 0;
+    width: 930px;
+    height: 100px;
     float: left;
+    background-color: #FFFFFF;
+
+    padding: 30px;
 }
 
-.cart{
-    border-radius: 0 20px 0 0;
-    background-color: aquamarine;
+.cart {
+    border-radius: 20px;
     width: 250px;
-    height : 700px;
-    float : right;
+    height: 750px;
+    float: right;
+
+    background-color: #FFFFFF;
 }
 
-.menulist{
-    width : 950px;
+.menulist {
+    margin-top: 100px;
+    width: 930px;
+    height: 650px;
+    background-color: #FFFFFF;
     border-radius: 0 0 20px 20px;
+    overflow: scroll;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
+
+
+.menuselect table {
+    width: 500px;
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 50px;
+    padding: 30px;
+    text-align: center;
+}
+
+
+
 
 .footer {
-    position: absolute;
-    bottom: 0px;
-        
-    width:100%;
-    height:70px;  
+    margin-bottom: 0px;
+    width: 100vw;
+    height: 5vw;
     background: #f2c000;
+    position:relative;
+    bottom:0;
+    text-align: center;    
+}
 
+.menu{
+    width: 200px;
+    margin-right: 15px;
+    float : left;
+    margin-bottom: 20px;
+}
+
+.menu img{    
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.menu a1{
+    padding-left: 10px;
+    color : #cf1126;
+    font-weight: bold;
+    margin-top : 10px;
+
+}
+
+.menu a2{
+    padding-left: 10px;
+}
+
+
+
+
+#bowl{
+    display: none;
+}
+
+#side{
+    display: none;
+}
+
+#beverage{
+    display: none;
+}
+
+.menuinfo{
+    position: absolute;
+    top : 120px;
+    left : 35%;
+    width: 400px;
+    height: 700px;
+    background-color: #fffcf8;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button {
+    
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 45px;
+    font-size: 1.6em;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+}
+
+button:hover {
+    background: #fff;
+}
+
+button:before,
+
+button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 5px;
+    width: 0;
+    background: #f2c000;
+    transition: 400ms ease all;
+}
+
+button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+button:hover:before,
+button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
 }

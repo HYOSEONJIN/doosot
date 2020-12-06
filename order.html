@@ -15,6 +15,8 @@
     <!--제이쿼리 라이브러리 로드-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
+    <!--제이슨 로드-->
+    <script type="text/javascript" src="/json/menuinfo.json"></script>
 
 
     <!-- 합쳐지고 최소화된 최신 CSS -->
@@ -25,8 +27,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 
+
+
 </head>
 
+    
+<!--메뉴 화면-->
 <body class="orderbackground">
 
     <!--header-->
@@ -41,48 +47,50 @@
         </div>
     </div>
 
-
-    <div class="orderback">
-        <div class="orderbody">
-            <div class="menuselect">
-                <table>
-                    <tr>
-                        <td>
-                            <div class="menuimage" id="mi1"></div>
-                            <div class="button-1">
-                                <div class="eff-1"></div>
-                                <a href="#"> 사각도시락 </a>
-                            </div>
-                        </td>
-                        
-                        <td>
-                            <div class="menuimage" id="mi2"></div>
-                            <div class="button-1">
-                                <div class="eff-1"></div>
-                                <a href="#"> 보울도시락 </a>
-                            </div></td>
-                        <td><div class="menuimage" id="mi3"></div>                            <div class="button-1">
-                                <div class="eff-1"></div>
-                                <a href="#"> 실속반찬 </a>
-                            </div></td>
-                        <td>
-                            <div class="menuimage" id="mi4"></div><div class="button-1">
-                                <div class="eff-1"></div>
-                                <a href="#"> 음료·국 </a>
-                            </div></td>
-                    </tr>
-                </table>
-
+    <section>
+        <div class="orderback">
+            <div class="orderbody">
+                <div class="menuselect">
+                    <button onclick="javascript:callsqlist();">사각도시락</button>
+                    <button onclick="javascript:callbowllist();">보울도시락</button>
+                    <button onclick="javascript:callsidelist();">실속반찬</button>
+                    <button onclick="javascript:callbvlist();">음료</button>
+                </div>
+                <div class="cart"></div>
+                <div class="menulist">
+                    <div class="square" id="square"></div>
+                    <div clsss="bowl" id="bowl"><h1>TEST</h1></div>
+                    <div class="side" id="side"><h1>TEST</h1></div>
+                    <div class="beverage" id="beverage"><h1>TEST</h1></div>
+                </div>
             </div>
-            <div class="cart"></div>
-            <div class="menulist">44</div>
         </div>
+    </section>
+<!--
+    
+<div class="menuinfo">
+        <div>
+    dddddddddddddddd
     </div>
+    
+    </div>
+    
+-->
 
 
 
+<!--
     <div class="footer">
         dddddddddddddddd
     </div>
+    -->
+    <footer class="footer">
+        dddddddddddddddd
+    </footer>
+    
+    
+    
+    
+    
 </body></html>
 
