@@ -249,12 +249,11 @@ body {
     box-shadow: 1px 1px 3px;
     padding: 30px;
     display: none;
-
 }
 
 .menuinfo h1 {
     font-size: 25px;
-    font-weight: bold;
+    font-wrteight: bold;
     color: dimgrey;
     margin-left: 10px;
 }
@@ -279,6 +278,39 @@ body {
 
 }
 
+.addselectmenu{
+    overflow: hideen;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.addselectmenu table{
+    margin-left: 70px;
+}
+.addselectmenu input{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.addselectmenu input[type=text]{
+    margin: 0 20px;
+    background-color: transparent;
+    border: 0px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.addselectmenu input[type=button]{
+    background-color: transparent;
+    border: 0px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.addselectmenu a,{
+}
 .addmenu a1 {
     font-weight: bold;
 }
@@ -287,10 +319,10 @@ body {
     font-size: 0.8em;
     color: #cf1126;
 }
-
 .addmenubutton {
     margin: 0 auto;
     text-align: center;
+    
 }
 
 .addmenubutton input {
@@ -312,9 +344,9 @@ body {
 
 }
 
-.cartlist{
+.cartlist {
     width: 100%;
-    height: 550px;
+    height: 480px;
     overflow: scroll;
 }
 
@@ -331,54 +363,87 @@ body {
     border-radius: 100px;
 }
 
-.cart img{
+.cart img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
 }
 
-.cart a{
-    font-size : 16px;
+.cart a1 {
+    color : #cf1126;
+    font-weight: bold;
 }
 
-.cancel{
-    margin-left: 20px;
-    
+.cart a2{
+    margin-left: 10px;
 }
-.cart table{
+.cancel {
+    margin-left: 20px;
+
+}
+
+.cart table {
     margin-bottom: 20px;
 }
 
+.sidemenu_show{
+    padding-top : 15px;
+}
 
-.cart input[type=submit]{
+
+
+.sum{
+    width : 100%;
+    height: 70px;
+    font-size: 3em;
+    text-align: right;
+    font-weight: bold;
+    
+}
+.paybutton input[type=button],
+.cart input[type=submit] {
     float: left;
     background-color: #f2c000;
     font-family: 'TmoneyRoundWindExtraBold';
-    font-size : 30px;
+    font-size: 30px;
     width: 100px;
     border: 0px;
     padding: 10px;
-    color:white;
+    color: white;
     border-radius: 5px;
-    
+
+}
+
+
+.cart input[type=submit] {
     margin-right: 10px;
 }
-.paybutton input[type=button]{
-    background-color: #f2c000;
-    font-family: 'TmoneyRoundWindExtraBold';
-    font-size : 30px;
-    width: 100px;
-    border: 0px;
-    padding: 10px;
-    color:white;
+
+
+
+.takeout {
+    position: absolute;
+    top: 250px;
+    left: 37%;
+    width: 400px;
+    height: 380px;
+    background-color: #fffcf8;
     border-radius: 5px;
+    box-shadow: 1px 1px 3px;
+    padding : 30px 0px;
+    display: block;
 }
 
-
-
-
-
-
+.takeout input[type=button] {
+    background-color: #f2c000;
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-size: 40px;
+    border: 0px;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    margin: 30px 103px;
+}
 
 
 
@@ -425,5 +490,3 @@ button:hover:after {
     width: 100%;
     transition: 800ms ease all;
 }
-
-

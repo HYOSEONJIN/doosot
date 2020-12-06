@@ -101,7 +101,6 @@
 
 
         });
-
     </script>
 
 </head>
@@ -141,27 +140,41 @@
                     <h1>선택내역</h1>
                     <hr class="cart_line_deco">
                     <div class="cartlist">
-                        
-                        
-                        
+
+
+
                         <table class="tg">
                             <form class="">
                                 <tbody>
                                     <tr>
-                                        <td class="tg-0pky" rowspan="2"><img src="image/menu/square/1.jpg"></td>
-                                        <td class="tg-0pky" colspan="3">
+                                        <td rowspan="2"><img src="image/menu/square/1.jpg"></td>
+                                        <td colspan="3">
                                             <a1>생선까스도련님고기고기</a1>
                                         </td>
                                     </tr>
                                     <tr class="trline">
-                                        <td class="tg-0pky">
+                                        <td>
                                             <a2>5,500원</a2>
                                         </td>
-                                        <td class="tg-0pky">
+                                        <td>
                                             <a3>X 4</a3>
                                         </td>
-                                        <td class="tg-0pky">
-                                            <input type="button" class="cancel" value="취소">
+                                        <td>
+                                            <input type="button" class="cancel" value="삭제">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sidemenu_show" colspan="4">
+                                            <ul>
+                                                <li>
+                                                    <a1>현미밥</a1>
+                                                    <a2>1,500원</a2>
+                                                </li>
+                                                <li>
+                                                    <a1>스팸</a1>
+                                                    <a2>2,000원</a2>
+                                                </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -169,9 +182,17 @@
                         </table>
                         <hr>
 
+
+
                     </div>
-                    
-                    <div><input type="submit" class="btn btn-warning"  value="결제하기" ></div>
+                    <div class="sum">
+                        <p>25000원</p>
+                    </div>
+
+                    <div class="paybutton">
+                        <input type="submit" class="btn btn-warning" value="결제">
+                        <input type="button" class="btn btn-warning" value="취소">
+                    </div>
 
                 </div>
 
@@ -197,7 +218,21 @@
     <!-- 사이드 메뉴 선택착-->
     <div class="menuinfo" id="menuinfo">
         <div>
-            <h1>사이드 메뉴</h1>
+            <div class="addselectmenu">
+                <table>
+                    <tr style="text-align:center;">
+                        <td>
+                            <input type="button" value="◀" onclick="fnCalCount('m', this);">
+                            <input type="text" name="pop_out" value="1" readonly="readonly" style="text-align:center;" />
+                            <input type="button" value="▶" onclick="fnCalCount('p',this);">
+                        </td>
+                    </tr>
+                </table>
+
+                <!--                <input type="button" onclick="fnCalCount('p',this);" value="+">
+                <input type="text" name="pop_out" value="0" readonly="readonly">
+                <input type="button" onclick="fnCalCount('m', this);" value="-">-->
+            </div>
             <hr>
             <h2>밥 추가 변경</h2>
             <div class="addmenu" id="addmenu1">
@@ -234,6 +269,11 @@
 
     </div>
 
+    <!--매장or테이크아웃여부-->
+    <div class="takeout" id="takeout">
+        <input type="button" class="btn btn-warning" value="매장식사" onclick="javascript:takeout('no')"><br>
+        <input type="button" class="btn btn-warning" value="포장하기" onclick="javascript:takeout('yes')">
+    </div>
 
 
 
@@ -250,6 +290,4 @@
 
 
 
-</body>
-
-</html>
+</body></html>

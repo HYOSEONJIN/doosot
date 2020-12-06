@@ -1,6 +1,3 @@
-
-
-
 window.onload = function () {
     getSquareItem();
     getBowlItem();
@@ -41,7 +38,7 @@ function getBowlItem() {
     var menuHtml = "";
 
     for (var i = 0; i < menudata.length; i++) {
-        menuHtml += '<div class="menu">';
+        menuHtml += '<div class="menu" onclick = "javascript:addmenuOpen();">';
         menuHtml += '<table>';
         menuHtml += '<tr>';
         menuHtml += '<td><img src="'
@@ -68,7 +65,7 @@ function getSideItem() {
     var menuHtml = "";
 
     for (var i = 0; i < menudata.length; i++) {
-        menuHtml += '<div class="menu">';
+        menuHtml += '<div class="menu" onclick = "javascript:addmenuOpen();">';
         menuHtml += '<table>';
         menuHtml += '<tr>';
         menuHtml += '<td><img src="'
@@ -146,15 +143,32 @@ function callbvlist() {
 
 
 // 추가메뉴창 닫기
-function addmenuClose(){
+function addmenuClose() {
     document.querySelector('#menuinfo').style.display = 'none';
 };
-
 // 추가메뉴창 열기
-function addmenuOpen(){
+function addmenuOpen() {
     document.querySelector('#menuinfo').style.display = 'block';
 }
 
 
-/*
-*/
+/*매장or포장*/
+function takeout(takeout) {
+    var takeout = takeout;
+    console.log(takeout);
+    document.querySelector('#takeout').style.display = 'none';
+}
+
+function fnCalCount(type, ths){
+    var $input = $(ths).parents("td").find("input[name='pop_out']");
+    var tCount = Number($input.val());
+    
+    if(type=='p'){
+        $input.val(Number(tCount)+1);
+        
+    }else{
+        if(tCount >1) $input.val(Number(tCount)-1);    
+        }
+}
+ 
+
