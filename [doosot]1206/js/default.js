@@ -3,6 +3,7 @@ window.onload = function () {
     getBowlItem();
     getSideItem();
     getBeverageItem();
+    getSidemenuItem();
 };
 
 
@@ -113,6 +114,45 @@ function getBeverageItem() {
 
 
 
+
+/*사이드 메뉴 불러오기 메서드*/
+function getSidemenuItem() {
+
+    var menudata = JSON.parse(adm);
+    
+    console.log(menudata[0].name);
+    var menuHtml = '<h2>밥 추가 변경</h2>';
+
+    for (var i = 0; i < 3; i++) {
+        menuHtml += '<div class="addmenu" id="addmenu';
+        menuHtml += i+1
+        menuHtml += '"><a1>';
+        menuHtml += menudata[i].name
+        menuHtml += '</a1><br><a2>';
+        menuHtml += menudata[i].price
+        menuHtml += '</a2></div>'
+    }
+
+    menuHtml += '<h2>토핑 추가</h2>'
+
+    for (var i = 3; i < 6; i++) {
+        menuHtml += '<div class="addmenu" id="addmenu';
+        menuHtml += i+1
+        menuHtml += '"><a1>';
+        menuHtml += menudata[i].name
+        menuHtml += '</a1><br><a2>';
+        menuHtml += menudata[i].price
+        menuHtml += '</a2></div>'
+        
+    }
+    
+    console.log(menuHtml);
+
+        var div_side = document.querySelector("#div_addmenu");
+        div_side.innerHTML = menuHtml;
+    };
+
+
 function callbowllist() {
     document.querySelector('#square').style.display = 'none';
     document.querySelector('#bowl').style.display = 'block';
@@ -188,5 +228,8 @@ function removeCart() {
         removeHtml = '';
         var removecart = document.getElementById("addmenu_tbody");
         removecart.innerHTML = removeHtml;
+        var removecart = document.getElementById("sum");
+        removecart.innerHTML = removeHtml;
+        
     }
 };

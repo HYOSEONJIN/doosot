@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="./css/default.css">
 
     <!--자바스크립트 불러오기-->
-    <script src="/js/js.js"></script>
+    <script src="js/default.js"></script>
+    <script src="data/menuinfo.js"></script>
 
     <!--제이쿼리 라이브러리 로드-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
-    <!--제이슨 로드-->
-    <script type="text/javascript" src="/json/menuinfo.json"></script>
+
 
 
     <!-- 합쳐지고 최소화된 최신 CSS -->
@@ -28,22 +28,14 @@
 
 
     <script>
-
-        
         $(document).ready(function() {
 
-        var addcnt1 = 1;
-        var addcnt2 = 1;
-        var addcnt3 = 1;
-        var addcnt4 = 1;
-        var addcnt5 = 1;
-        var addcnt6 = 1;
-            /*            
-            for (var i = 1; i < 7; i++) {
-                $('#addmenu' + i).click(function() {
-                    alert('추가되었음');
-                });
-                }*/
+            var addcnt1 = 1;
+            var addcnt2 = 1;
+            var addcnt3 = 1;
+            var addcnt4 = 1;
+            var addcnt5 = 1;
+            var addcnt6 = 1;
 
 
 
@@ -100,19 +92,19 @@
                 }
                 addcnt6++;
             });
-            
-            
+
+
             // 추가메뉴창 닫기
-            $('#addmenuClose').click(function(){
-                $('#menuinfo').css('display','none');
-                
+            $('#addmenuClose').click(function() {
+                $('#menuinfo').css('display', 'none');
+
                 $('#addmenu1').css('border', '0px solid red');
                 $('#addmenu2').css('border', '0px solid red');
                 $('#addmenu3').css('border', '0px solid red');
                 $('#addmenu4').css('border', '0px solid red');
                 $('#addmenu5').css('border', '0px solid red');
                 $('#addmenu6').css('border', '0px solid red');
-                
+
                 addcnt1 = 1;
                 addcnt2 = 1;
                 addcnt3 = 1;
@@ -206,7 +198,7 @@
 
 
                     </div>
-                    <div class="sum">
+                    <div class="sum" id="sum">
                         <p>25000원</p>
                     </div>
 
@@ -255,7 +247,9 @@
                 <input type="button" onclick="fnCalCount('m', this);" value="-">-->
             </div>
             <hr>
-            <h2>밥 추가 변경</h2>
+            <div id="div_addmenu">
+                test</div>
+            <!--  <h2>밥 추가 변경</h2>
             <div class="addmenu" id="addmenu1">
                 <a1>밥</a1><br>
                 <a2>+ 1,000원</a2>
@@ -280,10 +274,10 @@
             <div class="addmenu" id="addmenu6">
                 <a1>청양고추</a1><br>
                 <a2>+ 500원</a2>
-            </div>
+            </div>-->
             <div class="addmenubutton">
                 <input type="submit" value="선택완료">
-                <input type="button" value="닫기" id="addmenuClose"> 
+                <input type="button" value="닫기" id="addmenuClose">
 
             </div>
 
@@ -299,12 +293,8 @@
 
 
 
-    <!--
-    <div class="footer">
-        dddddddddddddddd
-    </div>
-    -->
-    <footer class="footer">
+
+    <footer class="footer2">
         <p>
             <font color=#cf1126>❤</font> 남서아 | 서지민 | 양선경 | 이수진 | 진효선 | 최혜인 <font color=#cf1126>❤</font>
         </p>
@@ -312,8 +302,8 @@
         <p>
 
     </footer>
-    
-    
+
+
 
 
 
