@@ -12,7 +12,7 @@
     <!--자바스크립트 불러오기-->
     <script src="data/menuinfo.js"></script>
     <script src="js/default.js"></script>
-    
+
     <!--제이쿼리 라이브러리 로드-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
@@ -31,6 +31,14 @@
 
             // 추가메뉴창 닫기
             $('#addmenuClose').click(function() {
+
+                $('#bowl').removeClass('clicknone');
+                $('#square').removeClass('clicknone');
+                $('#side').removeClass('clicknone');
+                $('#beverage').removeClass('clicknone');
+                $('.menuselect >button').removeClass('clicknone');
+                $('.cart').removeClass('clicknone');
+
                 $('#menuinfo').css('display', 'none');
 
                 $('#addmenu1').css('border', '0px solid red');
@@ -49,6 +57,7 @@
             });
 
         });
+
     </script>
 
 </head>
@@ -84,7 +93,7 @@
                 </div>
                 <!--메뉴 END -->
 
-                
+
                 <!-- 장바구니 START -->
                 <div class="cart">
                     <h1>선택내역</h1>
@@ -144,9 +153,9 @@
                         <input type="button" class="btn btn-warning" value="취소" onclick="removeCart()">
                     </div>
 
-                </div> 
+                </div>
                 <!-- 장바구니 END -->
-                
+
                 <!-- 메뉴리스트 START -->
                 <div class="menulist">
                     <div class="square" id="square"></div>
@@ -175,9 +184,9 @@
                         <td colspan="2">
                             <img id="view_img" class="view_img">
                         </td>
-                    </tr>                    
+                    </tr>
                     <tr>
-                        <td><span id="menu_name"></span></td>                        
+                        <td><span id="menu_name"></span></td>
                         <td style="width: 100px">
                             <input type="button" value="◀" onclick="fnCalCount('m', this);">
                             <input type="text" name="pop_out" value="1" readonly="readonly" style="text-align:center" />
@@ -238,19 +247,18 @@
 
     <!-- 히든폼 -->
     <form name="order_form">
-        <
-    </form>    
+        < </form>
 
-    <!-- FOOTER START -->
-    <footer class="footer2">
-        <p>
-            <font color=#cf1126>❤</font> 남서아 | 서지민 | 양선경 | 이수진 | 진효선 | 최혜인 <font color=#cf1126>❤</font>
-        </p>
-        <p>@TEAM DOOSOT DOSIRAK
-        <p>
+            <!-- FOOTER START -->
+            <footer class="footer2">
+                <p>
+                    <font color=#cf1126>❤</font> 남서아 | 서지민 | 양선경 | 이수진 | 진효선 | 최혜인 <font color=#cf1126>❤</font>
+                </p>
+                <p>@TEAM DOOSOT DOSIRAK
+                <p>
 
-    </footer>
-    <!-- FOOTER END -->
+            </footer>
+            <!-- FOOTER END -->
 
 
 
@@ -258,4 +266,5 @@
 
 
 </body>
+
 </html>

@@ -538,3 +538,12 @@ button:hover:after {
     margin-top: 10px;
 
 }
+
+
+.clicknone {
+    pointer-events: none;
+}
+
+.clickok{
+    pointer-events: all;
+}
