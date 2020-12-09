@@ -1,27 +1,30 @@
 var toppingList = [];
-var nowTabNum = 0;      // 현재 선택된 탭번호
-var nowItemNum = 0;    // 현재 선택된 메뉴번호
+var nowTabNum = 0; // 현재 선택된 탭번호
+var nowItemNum = 0; // 현재 선택된 메뉴번호
 
 window.onload = function () {
     // 메뉴 불러오기
-    getItem();     
-    
+    getItem();
+
     // 팝업창 제어 프로세스
-    fnPopupProc();  
-  
+    fnPopupProc();
+
+
+    // 다른 부분 클릭 안되게 하기
+    noClick();
 };
 
 
 /* 메뉴 불러오기 메서드 */
 function getItem() {
 
-    for(var i = 0; i < arrTabList.length; i++){
+    for (var i = 0; i < arrTabList.length; i++) {
 
         var menudata = JSON.parse(itemList[i]);
         var menuHtml = "";
-   
+
         for (var j = 0; j < menudata.length; j++) {
-            menuHtml += '<div class="menu" onclick = "javascript:addmenuOpen(' + i +', ' + j + ');">';
+            menuHtml += '<div class="menu" onclick = "javascript:addmenuOpen(' + i + ', ' + j + ');">';
             menuHtml += '<table>';
             menuHtml += '<tr>';
             menuHtml += '<td><img src="'
@@ -49,24 +52,24 @@ function getSidemenuItem(tabNum, itemNum) {
     var menudata = JSON.parse(itemList[tabNum]);
 
     // 현재 선택된 내역 저장 
-    nowTabNum = tabNum;     
-    nowItemNum = itemNum; 
-    
+    nowTabNum = tabNum;
+    nowItemNum = itemNum;
+
     // 메뉴명, 이미지 넣기        
     $('#menu_name').text(menudata[itemNum].name);
     $("#view_img").attr("src", menudata[itemNum].src);
     // 음식 개수 1로 재셋팅
     $("input[name='pop_out']").val(1);
-    
+
     // 토핑 데이터 가져오기(음료수 탭만 제외 )
-    if(tabNum != 3){    
-        var tabNum = 4; 
+    if (tabNum != 3) {
+        var tabNum = 4;
         var menudata = JSON.parse(itemList[tabNum]);
 
         var menuHtml = '<h2>밥 추가 변경</h2>';
 
         for (var i = 0; i < 6; i++) {
-            if(i == 3){
+            if (i == 3) {
                 menuHtml += '<h2>토핑 추가</h2>';
             }
             menuHtml += '<div class="addmenu" id="addmenu' + i + '" onclick="javascript:fnEtcClick(' + tabNum + ', ' + i + ');"><a1>';
@@ -77,47 +80,51 @@ function getSidemenuItem(tabNum, itemNum) {
         }
 
         console.log(menuHtml);
-       
+
 
         var div_side = document.querySelector("#div_addmenu");
         div_side.innerHTML = menuHtml;
-        $('#menuinfo').height("500px");  
-        
-    // 음료수 탭인 경우     
-    } else {        
+        $('#menuinfo').height("500px");
+
+        // 음료수 탭인 경우     
+    } else {
         var div_side = document.querySelector("#div_addmenu");
-        div_side.innerHTML = '';        
-        $('#menuinfo').height("300px");          
-    }   
+        div_side.innerHTML = '';
+        $('#menuinfo').height("300px");
+    }
 };
 
 
 // 메뉴탭 클릭시 메뉴목록 Display
-function menulist(tabNum){
-    for(var i = 0; i < arrTabList.length; i++){
-        if(i == tabNum){
+function menulist(tabNum) {
+    for (var i = 0; i < arrTabList.length; i++) {
+        if (i == tabNum) {
             eval("document.querySelector('#" + arrTabList[i] + "').style.display = 'block';");
-        }else {
+        } else {
             eval("document.querySelector('#" + arrTabList[i] + "').style.display = 'none';");
-        }                
+        }
     }
 };
 
 // 추가메뉴창 닫기 >> 제이쿼리로 변경
 function addmenuClose() {
     document.querySelector('#menuinfo').style.display = 'none'
-    document.querySelector('#addmenu1').style.border= '0px';
-    
+    document.querySelector('#addmenu1').style.border = '0px';
+
 };
 
 // [팝업창] 추가메뉴창 열기
 function addmenuOpen(tabNum, itemNum) {
-    
+
     // 팝업창 셋팅
-    getSidemenuItem(tabNum, itemNum);    
-    
+    getSidemenuItem(tabNum, itemNum);
+
     // 팝업창 노출 
     document.querySelector('#menuinfo').style.display = 'block';
+
+
+    // 다른 부분 클릭 안되게 하기
+    noClick();
 }
 
 
@@ -126,6 +133,9 @@ function takeout(takeout) {
     var takeout = takeout;
     console.log(takeout);
     document.querySelector('#takeout').style.display = 'none';
+
+    // 클릭되게 하기
+    okClick();
 }
 
 /*고른 음식 수량 선택*/
@@ -153,60 +163,64 @@ function removeCart() {
         removecart.innerHTML = removeHtml;
         var removecart = document.getElementById("sum");
         removecart.innerHTML = removeHtml;
-        
+
     }
 };
 
 
 // 토핑 클릭 
-function fnEtcClick(tabNum, itemNum){
+function fnEtcClick(tabNum, itemNum) {
 
     // 토핑인 경우 
-    if(toppingList[itemNum] > 0){    
+    if (toppingList[itemNum] > 0) {
         // 이미 선택되어져 있는경우 선택 해제 
         $('#addmenu' + itemNum).css('border', '0px solid red');
         toppingList[itemNum] = 0;
 
-    }else {
+    } else {
         // 선택 안되어 있는 경우 선택
         $('#addmenu' + itemNum).css('border', '3px solid red');
         toppingList[itemNum] = 1;
-    } 
+    }
 }
 
 
 // 팝업창 제어 프로세스
-function fnPopupProc(){
+function fnPopupProc() {
 
     // 배열 초기화
-    popSelect.length = 0;   
-    
-    // 선택완료 버튼 클릭
-    $('#addmenuSubmit').click(function() {
+    popSelect.length = 0;
 
-        
+    // 선택완료 버튼 클릭
+    $('#addmenuSubmit').click(function () {
+
+
         // 메인 메뉴 
-        popSelect.push(
-            { tabNum:nowTabNum, itemNum:nowItemNum, cnt:$("input[name='pop_out']").val() }
-        );
-             
+        popSelect.push({
+            tabNum: nowTabNum,
+            itemNum: nowItemNum,
+            cnt: $("input[name='pop_out']").val()
+        });
+
         // 음료수탭 제외 
-        if(nowTabNum != 3){ 
-           
+        if (nowTabNum != 3) {
+
             for (var i = 0; i < 6; i++) {
-                
+
                 // 토핑 선택한 경우에만 데이터 저장
-                if(toppingList[i] == 1){
-                    popSelect.push(
-                        { tabNum:4, itemNum:i, cnt:1 }
-                    );                  
+                if (toppingList[i] == 1) {
+                    popSelect.push({
+                        tabNum: 4,
+                        itemNum: i,
+                        cnt: 1
+                    });
                 }
-                
+
             }
         }
-         
+
         console.log(popSelect)
-        
+
         $('#menuinfo').css('display', 'none');
 
         for (var i = 0; i < 6; i++) {
@@ -214,10 +228,12 @@ function fnPopupProc(){
             toppingList[i] = 0;
         }
 
-    });   
-    
+    });
+
+
+
     // 추가메뉴창 닫기
-    $('#addmenuClose').click(function() {
+    $('#addmenuClose').click(function () {
         $('#menuinfo').css('display', 'none');
 
         for (var i = 0; i < 6; i++) {
@@ -225,5 +241,32 @@ function fnPopupProc(){
             toppingList[i] = 0;
         }
 
-    });    
+
+        // 클릭되게 하기
+        okClick();
+
+    });
+
+}
+
+
+// 팝업뜨면 바탕에 다른 메뉴 클릭 못하게하기
+function noClick() {
+    $('#bowl').addClass('clicknone');
+    $('#square').addClass('clicknone');
+    $('#side').addClass('clicknone');
+    $('#beverage').addClass('clicknone');
+    $('.menuselect >button').addClass('clicknone');
+    $('.cart').addClass('clicknone');
+}
+
+// 팝업창 닫으면 클릭되게 하기
+function okClick() {
+    $('#bowl').removeClass('clicknone');
+    $('#square').removeClass('clicknone');
+    $('#side').removeClass('clicknone');
+    $('#beverage').removeClass('clicknone');
+    $('.menuselect >button').removeClass('clicknone');
+    $('.cart').removeClass('clicknone');
+
 }
