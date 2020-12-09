@@ -203,6 +203,7 @@ function fnPopupProc() {
 
         // 클릭되게 하기
         okClick();
+
         // 메인 메뉴 
         popSelect.push({
             tabNum: nowTabNum,
@@ -211,27 +212,27 @@ function fnPopupProc() {
         });
 
         // 음료수탭 제외 
-        if (nowTabNum != 3) {
 
-            for (var i = 0; i < 6; i++) {
 
-                // 토핑 선택한 경우에만 데이터 저장
-                if (toppingList[i] == 1) {
-                    popSelect.push({
-                        tabNum: 4,
-                        itemNum: i,
-                        cnt: 1
-                    });
-                } else {
-                    popSelect.push({
-                        tabNum: 4,
-                        itemNum: i,
-                        cnt: 0
-                    });
-                }
+        for (var i = 0; i < 6; i++) {
 
+            // 토핑 선택한 경우에만 데이터 저장
+            if (toppingList[i] == 1) {
+                popSelect.push({
+                    tabNum: 4,
+                    itemNum: i,
+                    cnt: 1
+                });
+            } else {
+                popSelect.push({
+                    tabNum: 4,
+                    itemNum: i,
+                    cnt: 0
+                });
             }
+
         }
+
 
         console.log(popSelect);
 
@@ -304,24 +305,29 @@ function show_cart(popSelect) {
     console.log(cartList[0][0].cnt); // 메뉴 갯수
 
     // 메뉴의 종류 : itemList[cartList[0][0].tabNum
-    var menudata = JSON.parse(itemList[cartList[0][0].tabNum]);
+    // var menudata = JSON.parse(itemList[cartList[0][0].tabNum]);
     var sidedata = JSON.parse(itemList[4]);
 
     // 메뉴의 이름 : menudata[cartList[0][0].itemNum].name
-    console.log(menudata[cartList[0][0].itemNum].name);
+    // console.log(menudata[cartList[0][0].itemNum].name);
     // 메뉴의 가격 : menudata[cartList[0][0].itemNum].price
-    console.log(menudata[cartList[0][0].itemNum].price);
+    // console.log(menudata[cartList[0][0].itemNum].price);
     // 메뉴 갯수 :
-    console.log(cartList[0][0].cnt);
+    // console.log(cartList[0][0].cnt);
     // 메뉴 사진 :
-    console.log(menudata[cartList[0][0].itemNum].src);
+    // console.log(menudata[cartList[0][0].itemNum].src);
 
 
-    for (var i = 0; i < cartList.length; i++){
+    for (var i = 0; i < cartList.length; i++) {
+
+        var menudata = JSON.parse(itemList[cartList[i][0].tabNum]);
+
+        console.log('-------' + i + '번째 메뉴시작---------');
         console.log(menudata[cartList[i][0].itemNum].name);
         console.log(menudata[cartList[i][0].itemNum].src);
         console.log(menudata[cartList[i][0].itemNum].price);
         console.log(cartList[i][0].cnt);
+
 
         for (var j = 1; j < 7; j++) {
             if (cartList[i][j].cnt != 0) {
@@ -329,10 +335,10 @@ function show_cart(popSelect) {
                 console.log(sidedata[cartList[i][j].itemNum].price);
 
             }
-
         }
+
+
         console.log('----------메뉴하나끝----------');
     }
 
 }
-
