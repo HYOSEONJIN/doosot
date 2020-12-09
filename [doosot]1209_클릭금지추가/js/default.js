@@ -198,9 +198,9 @@ function fnPopupProc() {
 
     // 선택완료 버튼 클릭
     $('#addmenuSubmit').click(function () {
-        
-        
-        
+
+
+
         // 클릭되게 하기
         okClick();
         // 메인 메뉴 
@@ -222,11 +222,11 @@ function fnPopupProc() {
                         itemNum: i,
                         cnt: 1
                     });
-                }else{
+                } else {
                     popSelect.push({
                         tabNum: 4,
                         itemNum: i,
-                        cnt: 0                                              
+                        cnt: 0
                     });
                 }
 
@@ -234,15 +234,15 @@ function fnPopupProc() {
         }
 
         console.log(popSelect);
-        
+
         // cartList에 지금 선택한 메뉴를 너헝줌
         cartList[chooseCnt] = popSelect;
         // 선택횟수 ++;
         chooseCnt++;
         // 배열비워줌
-        popSelect=[];
-        
-        
+        popSelect = [];
+
+
         // !!-------확인용 나중에 지울 것-----!!
         show_cart();
 
@@ -296,17 +296,17 @@ function okClick() {
 
 }
 
-function show_cart(popSelect){
+function show_cart(popSelect) {
     console.log('배열은');
     console.log(cartList);
     console.log(cartList[0][0].tabNum); // 메뉴의 종류
     console.log(cartList[0][0].itemNum); // 메뉴찾기
     console.log(cartList[0][0].cnt); // 메뉴 갯수
-    
+
     // 메뉴의 종류 : itemList[cartList[0][0].tabNum
     var menudata = JSON.parse(itemList[cartList[0][0].tabNum]);
     var sidedata = JSON.parse(itemList[4]);
-    
+
     // 메뉴의 이름 : menudata[cartList[0][0].itemNum].name
     console.log(menudata[cartList[0][0].itemNum].name);
     // 메뉴의 가격 : menudata[cartList[0][0].itemNum].price
@@ -314,18 +314,25 @@ function show_cart(popSelect){
     // 메뉴 갯수 :
     console.log(cartList[0][0].cnt);
     // 메뉴 사진 :
-      console.log(menudata[cartList[0][0].itemNum].src);
+    console.log(menudata[cartList[0][0].itemNum].src);
 
-    for (var i = 0; i < cartList.length; i++) {
+
+    for (var i = 0; i < cartList.length; i++){
+        console.log(menudata[cartList[i][0].itemNum].name);
+        console.log(menudata[cartList[i][0].itemNum].src);
+        console.log(menudata[cartList[i][0].itemNum].price);
+        console.log(cartList[i][0].cnt);
+
         for (var j = 1; j < 7; j++) {
-            if (cartList[i][j].cnt!=0){
+            if (cartList[i][j].cnt != 0) {
                 console.log(sidedata[cartList[i][j].itemNum].name);
                 console.log(sidedata[cartList[i][j].itemNum].price);
 
             }
+
         }
+        console.log('----------메뉴하나끝----------');
     }
- 
-    
 
 }
+
