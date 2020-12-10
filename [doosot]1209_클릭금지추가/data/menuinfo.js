@@ -9,7 +9,7 @@ var itemList =
     ,          
         '[{"index" : "1","src" : "image/menu/bowl/1.jpg", "name" : "치킨마요", "price" : "2,900원"},{"index" : "2","src" : "image/menu/bowl/2.jpg", "name" : "참치마요", "price" : "2,900원"},{"index" : "3","src" : "image/menu/bowl/3.jpg", "name" : "스팸철판볶음밥", "price" : "4,500원"},{"index" : "4","src" : "image/menu/bowl/4.jpg", "name" : "묵은지김치찌개", "price" : "4,300원"},{"index" : "5","src" : "image/menu/bowl/5.jpg", "name" : "돈까스 카레", "price" : "3,900원"}]'
     ,
-        '[{"index" : "1","src" : "image/menu/side/1.jpg", "name" : "반찬계란말이", "price" : "2,200원"},{"index" : "2","src" : "image/menu/bowl/2.jpg", "name" : "반찬소불고기", "price" : "3,900원"},{"index" : "3","src" : "image/menu/bowl/3.jpg", "name" : "치킨샐러드", "price" : "3,600원"},{"index" : "4","src" : "image/menu/bowl/4.jpg", "name" : "볶음김치", "price" : "400원"}]'
+        '[{"index" : "1","src" : "image/menu/side/1.jpg", "name" : "반찬계란말이", "price" : "2,200원"},{"index" : "2","src" : "image/menu/side/2.jpg", "name" : "반찬소불고기", "price" : "3,900원"},{"index" : "3","src" : "image/menu/side/3.jpg", "name" : "치킨샐러드", "price" : "3,600원"},{"index" : "4","src" : "image/menu/side/4.jpg", "name" : "볶음김치", "price" : "400원"}]'
     ,
         '[{"index" : "1","src" : "image/menu/beverage/1.jpg", "name" : "웰치스포도355ml", "price" : "950원"},{"index" : "2","src" : "image/menu/beverage/2.jpg", "name" : "코카콜라355ml", "price" : "1,300원"},{"index" : "3","src" : "image/menu/beverage/3.jpg", "name" : "칠성사이다355ml", "price" : "1,300원"},{"index" : "4","src" : "image/menu/beverage/4.jpg", "name" : "뽀로로밀크맛235ml", "price" : "1,100원"}]'
     ,

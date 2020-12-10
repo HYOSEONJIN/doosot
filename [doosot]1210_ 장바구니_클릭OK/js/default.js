@@ -119,12 +119,6 @@ function menulist(tabNum) {
     }
 };
 
-// 추가메뉴창 닫기 >> 제이쿼리로 변경
-function addmenuClose() {
-    document.querySelector('#menuinfo').style.display = 'none'
-    document.querySelector('#addmenu1').style.border = '0px';
-
-};
 
 // [팝업창] 추가메뉴창 열기
 function addmenuOpen(tabNum, itemNum) {
@@ -285,6 +279,8 @@ function fnPopupProc() {
             $('#addmenu' + i).css('border', '0px solid red');
             toppingList[i] = 0;
         }
+        
+        okClick();
 
     });
 }
