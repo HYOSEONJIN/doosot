@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doosot</title>
+
+    <!--CSS 불러오기-->
+    <link rel="stylesheet" href="./css/default.css">
+
+    <!--자바스크립트 불러오기-->
+    <script src="data/menuinfo.js"></script>
+    <script src="js/default.js"></script>
+
+    <!--제이쿼리 라이브러리 로드-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+
+
+        });
+
+    </script>
+
+</head>
+
+
+<!--메뉴 화면-->
+
+<body class="orderbackground">
+
+    <!--header-->
+    <div class="header">
+        <div class="menu_div">
+            <table id="menu_table">
+                <tr>
+                    <td><a href="./index.html"><img src="image/logo.png" width="300px"></a></td>
+
+                    <td></td>
+            </table>
+        </div>
+    </div>
+
+    <section>
+        <div class="orderback">
+            <div class="orderbody">
+
+                <!--메뉴 START -->
+                <div class="menuselect">
+
+                    <button onclick="javascript:menulist(0);">사각도시락</button>
+                    <button onclick="javascript:menulist(1);">보울도시락</button>
+                    <button onclick="javascript:menulist(2);">실속반찬</button>
+                    <button onclick="javascript:menulist(3);">음료</button>
+                </div>
+                <!--메뉴 END -->
+
+
+                <!-- 장바구니 START -->
+                <div class="cart">
+                    <h1>선택내역</h1>
+                    <hr class="cart_line_deco">
+                    <div class="cartlist" id="cartlist">
+
+
+                    </div>
+                    <div class="sum" id="sum">
+                        <!--합계출력-->
+                    </div>
+
+                    <div class="paybutton">
+                        <input type="submit" class="btn btn-warning" value="결제" onclick="payClick()">
+                        <!--결제창띄우기-->
+                        <input type="button" class="btn btn-warning" value="취소" onclick="removeCart()">
+                    </div>
+
+                </div>
+                <!-- 장바구니 END -->
+
+                <!-- 메뉴리스트 START -->
+                <div class="menulist">
+                    <div class="square" id="square"></div>
+                    <div clsss="bowl" id="bowl">
+                        <h1></h1>
+                    </div>
+                    <div class="side" id="side">
+                        <h1></h1>
+                    </div>
+                    <div class="beverage" id="beverage">
+                        <h1></h1>
+                    </div>
+                </div>
+                <!-- 메뉴리스트 END -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 사이드 메뉴 선택창 START -->
+    <div class="menuinfo" id="menuinfo">
+        <div>
+            <div class="addselectmenu">
+                <img id="view_img" class="view_img">
+
+                <table>
+                    <tr>
+                        <td style="width:55%; text-align:left;"><span id="menu_name"></span></td>
+                        <td style="width:35%; text-align:right;">
+                            <input type="button" value="◀" onclick="fnCalCount('m', this);">
+                            <input type="text" name="pop_out" value="1" readonly="readonly" style="text-align:center">
+                            <input type="button" value="▶" onclick="fnCalCount('p',this);">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div id="div_addmenu"></div>
+            <div class="addmenubutton">
+                <input type="button" value="선택완료" id="addmenuSubmit">
+                <input type="button" value="닫기" id="addmenuClose">
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 사이드 메뉴 선택착 END -->
+
+    <!-- 매장or테이크아웃여부 START -->
+    <div class="takeout" id="takeout">
+        <input type="button" class="btn btn-warning" value="매장식사" onclick="javascript:takeout(false)"><br>
+        <input type="button" class="btn btn-warning" value="포장하기" onclick="javascript:takeout(true)">
+    </div>
+    <!-- 매장or테이크아웃여부 END -->
+
+
+    <!--결제수단선택창 만들기-->
+    <div class="payment" id="paystart">
+        <div>
+            <table class="ptab">
+
+                <tr>
+                    <td colspan="3"><input type="button" value="X" onclick="closePay()"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <h2 class="title">결제수단 선택</h2>
+                        <hr align="center" width:95>
+                    </td>
+                </tr>
+                <tbody class="tab">
+                    <tr>
+                        <td><img src="image/pay/cash.png" width="100" height="100" onclick="choosePay(0)"></td>
+                        <td><img src="image/pay/card.png" width="100" height="100" onclick="choosePay(1)"></td>
+                        <td><img src="image/pay/sam.png" width="100" height="100" onclick="choosePay(2)"></td>
+                    </tr>
+                    <tr align="center">
+                        <td>현금</td>
+                        <td>카드</td>
+                        <td>삼성페이</td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/pay/kakao.png" width="100" height="100" onclick="choosePay(3)">
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td>카카오페이</td>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--결제수단선택창 종료-->
+
+    <!--세부선택창-->
+    <div class="payment" id="paychoice">
+    </div>
+    <!--세부선택창 종료-->
+
+
+    <!--영수증 시작-->
+    <div class="receipt" id="receipt">
+    </div>
+    <!--영수증 종료-->
+
+
+
+    <!-- FOOTER START -->
+    <footer class="footer2">
+        <p>
+            <font color=#cf1126>❤</font> 남서아 | 서지민 | 양선경 | 이수진 | 진효선 | 최혜인 <font color=#cf1126>❤</font>
+        </p>
+        <p>@TEAM HANSOT DOSIRAK
+        <p>
+
+    </footer>
+    <!-- FOOTER END -->
+
+
+
+
+
+
+</body>
+
+</html>
