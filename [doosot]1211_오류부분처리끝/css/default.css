@@ -715,7 +715,7 @@ hr
 .receipt {
     
     width: 420px;
-    height: 700;
+    height: auto;
     max-height: 700px;
     padding: 10px;
     background-color: white;
